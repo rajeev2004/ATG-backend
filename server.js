@@ -97,7 +97,7 @@ app.post('/reset-Password',async(req,res)=>{
         }
         const hashedPassword=await bcrypt.hash(newpass,10);
         await db.query("update users set password=$1 where id=$2",[hashedPassword,result.userId]);
-        res.status(200).json({message:'Password successfully updated'});
+        res.status(200).json({message:'Password successfully updated',success:true});
     }catch(err){
         console.error(err.message);
         res.status(500).json({message:'server error'});
