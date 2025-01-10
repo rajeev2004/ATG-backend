@@ -72,7 +72,7 @@ app.post('/forgot-pass',async(req,res)=>{
                 pass:process.env.pass,
             },
         });
-        const resetLink=`${backend}/reset-password?token=${resetToken}`;
+        const resetLink=`https://rajeev2004.github.io/ATG/reset-password?token=${resetToken}`;
         const mail={
             from:process.env.mail,
             to:email,
