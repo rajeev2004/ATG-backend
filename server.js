@@ -17,7 +17,6 @@ const db=new Pool({
         rejectUnauthorized:false
     }
 });
-const backend="https://rajeev2004.github.io/ATG";
 const key=process.env.JWT_KEY;
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -72,7 +71,7 @@ app.post('/forgot-pass',async(req,res)=>{
                 pass:process.env.pass,
             },
         });
-        const resetLink=`https://rajeev2004.github.io/ATG/reset-password?token=${resetToken}`;
+        const resetLink=`https://rajeev2004.github.io/ATG/#/reset-password?token=${resetToken}`;
         const mail={
             from:process.env.mail,
             to:email,
